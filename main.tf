@@ -257,12 +257,13 @@ resource "aws_eks_node_group" "eks_node" {
 
 
   # Use the latest EKS-optimized Amazon Linux 2 AMI
-  ami_type = "AL2_ARM_64"
+  ami_type = "AL2_x86_64" 
+
   # Use the latest version of the EKS-optimized AMI
   # release_version = "latest"
 
   # Configure the node group instances
-  instance_types = ["m6g.large", "m6g.xlarge"] 
+  instance_types = ["t3.small", "t3.medium", "t3.large"]
 
   # Use the managed node group capacity provider
   capacity_type = "ON_DEMAND"
